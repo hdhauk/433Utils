@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
    mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
 
 
-   while(1) {
+  while(1) {
 
     if (mySwitch.available()) {
 
@@ -44,12 +44,10 @@ int main(int argc, char *argv[]) {
       if (value != 0) {
         mySwitch.resetAvailable();
         exit(value)
+      }
     }
-
-
   }
-
-  exit(0);
+exit(0);
 
 
 }
