@@ -43,11 +43,10 @@ int main(int argc, char *argv[]) {
 
       if (value != 0) {
         mySwitch.resetAvailable();
-        exit(value);
+        printf("%i\n", mySwitch.getReceivedValue() );
+        exit(0);
       }
     }
   }
-exit(0);
-
-
+exit(1);
 }
