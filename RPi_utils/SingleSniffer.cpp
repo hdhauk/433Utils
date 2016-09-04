@@ -20,7 +20,13 @@ int main(int argc, char *argv[]) {
    // This pin is not the first pin on the RPi GPIO header!
    // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
    // for more information.
-   int PIN = 1; // PIN: #18 on breakout board
+   int PIN;
+   if (argv[1] != NULL) {
+     PIN = atoi(argv[1])
+   }else{
+     int PIN = 1; // PIN: #18 on breakout board
+   }
+
 
    if(wiringPiSetup() == -1) {
      printf("wiringPiSetup failed, exiting...");
@@ -28,8 +34,6 @@ int main(int argc, char *argv[]) {
    }
 
    int pulseLength = 0;
-   if (argv[1] != NULL) pulseLength = atoi(argv[1]);
-
    mySwitch = RCSwitch();
    if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
    mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
@@ -43,7 +47,7 @@ int main(int argc, char *argv[]) {
 
       if (value != 0) {
         mySwitch.resetAvailable();
-        printf("%i\n", mySwitch.getReceivedValue() );
+        printf("%i\n", value );
         exit(0);
       }
     }
