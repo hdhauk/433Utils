@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 
       if (value != 0) {
         mySwitch.resetAvailable();
-        exit(value)
+        exit(value);
       }
     }
   }
