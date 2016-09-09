@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
    // for more information.
    int PIN;
    if (argv[1] != NULL) {
-     PIN = atoi(argv[1])
+     PIN = atoi(argv[1]);
    }else{
      int PIN = 1; // PIN: #18 on breakout board
    }

@@ -18,4 +18,4 @@ SingleSniffer: ../rc-switch/RCSwitch.o SingleSniffer.o
 
 
 clean:
-	$(RM) ../rc-switch/*.o *.o send codesend servo RFSniffer
+	$(RM) ../rc-switch/*.o *.o send codesend servo RFSniffer SingleSniffer
